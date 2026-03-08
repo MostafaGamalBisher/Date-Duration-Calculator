@@ -1,0 +1,28 @@
+:root {
+  /* ── Backgrounds ── */
+  --color-bg-primary: #ffffff; /* Main page background */
+  --color-bg-secondary: #f5f6f8; /* Cards, panels, input fields */
+  --color-bg-tertiary: #eceef2; /* Subtle section separators */
+
+  /* ── Borders & Dividers ── */
+  --color-border-light: #e2e4e9; /* Input outlines, card borders */
+  --color-border-medium: #c8cbd4; /* Focused states, table lines */
+
+  /* ── Typography ── */
+  --color-text-primary: #1a1d23; /* Headings, result output */
+  --color-text-secondary: #4b5060; /* Labels, descriptions */
+  --color-text-muted: #9196a6; /* Placeholders, hints */
+
+  /* ── Interactive / Accent ── */
+  --color-accent: #3b4a6b; /* Primary button, active state */
+  --color-accent-hover: #2c3a58; /* Button hover */
+  --color-accent-subtle: #edf0f7; /* Selected date bg, highlight row */
+
+  /* ── Functional States ── */
+  --color-success: #2e7d5e; /* Valid date, positive diff */
+  --color-warning: #8a6800; /* Edge case notice */
+  --color-error: #b0271f; /* Invalid input */
+
+  /* ── Shadow ── */
+  --shadow-card: 0 1px 4px rgba(26, 29, 35, 0.08);
+}

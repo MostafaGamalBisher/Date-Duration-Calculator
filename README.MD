@@ -1,0 +1,41 @@
+date-calculator/
+│
+├── src/ # Everything you write manually lives here
+│ ├── scss/ # All Sass source files
+│ │ ├── abstracts/ # Variables, mixins, functions — no output
+│ │ │ ├── \_variables.scss
+│ │ │ ├── \_mixins.scss
+│ │ │ └── \_functions.scss
+│ │ ├── base/ # Reset, typography, global defaults
+│ │ │ ├── \_reset.scss
+│ │ │ └── \_typography.scss
+│ │ ├── components/ # Scoped styles per UI component
+│ │ │ ├── \_button.scss
+│ │ │ ├── \_input.scss
+│ │ │ └── \_card.scss
+│ │ ├── layout/ # Structural regions
+│ │ │ ├── \_header.scss
+│ │ │ └── \_main.scss
+│ │ └── main.scss # Entry point — only @use imports, no styles
+│ │
+│ ├── js/ # JavaScript source files
+│ │ ├── utils/ # Pure logic functions (date math, validators)
+│ │ │ └── dateUtils.js
+│ │ ├── components/ # UI-related JS behaviors
+│ │ │ └── calculator.js
+│ │ └── main.js # Entry point — wires everything together
+│ │
+│ └── assets/ # Static files
+│ ├── images/
+│ └── fonts/
+│
+├── dist/ # Compiler output — never edit manually
+│ ├── css/
+│ │ └── main.css
+│ └── js/
+│
+├── index.html # Entry HTML — lives at root
+├── package.json # npm metadata and scripts
+├── package-lock.json # Auto-generated — do not edit
+├── .gitignore # Exclude node_modules and dist
+└── README.md # Project documentation
