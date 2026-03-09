@@ -1,9 +1,21 @@
-calculateDuration()
+calculateDuration();
 
-getInputValues()
+getInputValues();
 
-createDates()
+createDates();
 
-calculateDifference()
+calculateDifference();
 
-displayResult()
+displayResult();
+
+const calculateDuration = () => {
+  const dates = getInputValues();
+
+  const diff = calculateDifference(dates);
+
+  const days = claculateDates(diff);
+
+  const duration = convertDays(days);
+
+  console.log(duration);
+};
