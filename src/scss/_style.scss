@@ -1,6 +1,10 @@
 .hero {
   padding: 3rem 0 0rem;
   color: var(--color-text-primary);
+
+  &-title {
+    text-shadow: 0rem 1rem 1rem #2c3a5857;
+  }
 }
 
 .claculator {
@@ -17,6 +21,7 @@
   box-shadow: 0 1px 4px rgba(26, 29, 35, 0.08);
   border-radius: 3rem;
   background-color: var(--color-bg-secondary);
+  border: 0.1rem solid var(--color-border-light);
 }
 
 .date {
@@ -47,7 +52,22 @@
   padding: 1rem;
   font-weight: 400;
   border-radius: 3rem;
+  box-shadow: 0 1px 4px rgba(26, 29, 35, 0.08);
+  outline: none;
 }
+
+.date-input:focus {
+  border: 0.1rem solid var(--color-accent-hover);
+}
+
+.valid {
+  border: 0.1rem solid var(--color-success);
+}
+
+.invalid {
+  border: 0.1rem solid var(--color-error);
+}
+
 .vlaidation-message {
   opacity: 0;
 }
@@ -77,6 +97,7 @@
   border-radius: 5rem;
   padding: 0.1rem 0.2rem;
   transition: all 0.3s ease;
+  box-shadow: 0 1px 4px rgba(26, 29, 35, 0.08);
 }
 
 .checkbox {
@@ -96,13 +117,13 @@
 }
 
 .short-cuts-checkbox:has(.checkbox:checked) {
-  border: 0.1rem solid lightgreen;
+  border: 0.1rem solid var(--color-success);
   border-radius: 5rem;
 }
 
 .checkbox:checked + .checkmark {
   border: none;
-  background-color: lightgreen;
+  background-color: var(--color-success);
 }
 .button {
   margin-left: auto;
@@ -125,6 +146,7 @@
   &-title {
     color: var(--color-text-primary);
     font-size: 2.5rem;
+    text-shadow: 0.3rem 0.3rem 0.5rem #02392370;
   }
   &-container {
     display: flex;
