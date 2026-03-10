@@ -83,7 +83,7 @@ body {
 }
 
 .hero {
-  padding: 3rem 0 5rem;
+  padding: 3rem 0 0rem;
   color: var(--color-text-primary);
 }
 
@@ -96,8 +96,8 @@ body {
 .card-form {
   display: flex;
   flex-direction: column;
-  gap: 5rem;
-  padding: 4rem 6rem;
+  gap: 2rem;
+  padding: 2rem 6rem;
   box-shadow: 0 1px 4px rgba(26, 29, 35, 0.08);
   border-radius: 3rem;
   background-color: var(--color-bg-secondary);
@@ -242,6 +242,37 @@ body {
   padding: 1rem 3rem;
   border: 0.1rem solid var(--color-border-light);
   border-radius: 3rem;
+}
+
+@media (max-width: 520px) {
+  .hero {
+    text-align: center;
+    font-size: 1rem;
+  }
+  .date {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+  .date .refrance {
+    grid-column: 1/-1;
+  }
+  .date .date-input {
+    width: 100%;
+  }
+  .short-cuts {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 1rem;
+    justify-items: start;
+  }
+  .button {
+    grid-row: -1/-1;
+    grid-column: 2/3;
+    font-size: 1.5rem;
+    padding: 1rem 2.5rem;
+    margin-left: 0;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
