@@ -83,11 +83,7 @@ body {
 }
 
 .hero {
-<<<<<<< HEAD
-  padding: 3rem 0 5rem;
-=======
   padding: 3rem 0 0rem;
->>>>>>> 554a2823ad92f648ac6326813e66c80a93e41ee4
   color: var(--color-text-primary);
 }
 
@@ -100,13 +96,8 @@ body {
 .card-form {
   display: flex;
   flex-direction: column;
-<<<<<<< HEAD
-  gap: 5rem;
-  padding: 4rem 6rem;
-=======
   gap: 2rem;
   padding: 2rem 6rem;
->>>>>>> 554a2823ad92f648ac6326813e66c80a93e41ee4
   box-shadow: 0 1px 4px rgba(26, 29, 35, 0.08);
   border-radius: 3rem;
   background-color: var(--color-bg-secondary);
@@ -251,10 +242,9 @@ body {
   padding: 1rem 3rem;
   border: 0.1rem solid var(--color-border-light);
   border-radius: 3rem;
+  box-shadow: var(--shadow-card);
 }
 
-<<<<<<< HEAD
-=======
 @media (max-width: 520px) {
   .hero {
     text-align: center;
@@ -278,13 +268,19 @@ body {
     justify-items: start;
   }
   .button {
-    grid-row: -1/-1;
+    grid-row: 3/-1;
     grid-column: 2/3;
     font-size: 1.5rem;
     padding: 1rem 2.5rem;
     margin-left: 0;
   }
+  .result-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  .result {
+    font-weight: 400;
+  }
 }
 
->>>>>>> 554a2823ad92f648ac6326813e66c80a93e41ee4
 /*# sourceMappingURL=main.css.map */

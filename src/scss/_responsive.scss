@@ -26,10 +26,19 @@
   }
 
   .button {
-    grid-row: -1/-1;
+    grid-row: 3/-1;
     grid-column: 2/3;
     font-size: 1.5rem;
     padding: 1rem 2.5rem;
     margin-left: 0;
+  }
+
+  .result-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .result {
+    font-weight: 400;
   }
 }
