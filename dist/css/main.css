@@ -1,0 +1,247 @@
+@charset "UTF-8";
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  display: inline-block;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* End CSS Reset */
+:root {
+  /* ── Backgrounds ── */
+  --color-bg-primary: #ffffff; /* Main page background */
+  --color-bg-secondary: #f5f6f8; /* Cards, panels, input fields */
+  --color-bg-tertiary: #eceef2; /* Subtle section separators */
+  /* ── Borders & Dividers ── */
+  --color-border-light: #e2e4e9; /* Input outlines, card borders */
+  --color-border-medium: #c8cbd4; /* Focused states, table lines */
+  /* ── Typography ── */
+  --color-text-primary: #1a1d23; /* Headings, result output */
+  --color-text-secondary: #4b5060; /* Labels, descriptions */
+  --color-text-muted: #9196a6; /* Placeholders, hints */
+  /* ── Interactive / Accent ── */
+  --color-accent: #3b4a6b; /* Primary button, active state */
+  --color-accent-hover: #2c3a58; /* Button hover */
+  --color-accent-subtle: #edf0f7; /* Selected date bg, highlight row */
+  /* ── Functional States ── */
+  --color-success: #2e7d5e; /* Valid date, positive diff */
+  --color-warning: #8a6800; /* Edge case notice */
+  --color-error: #b0271f; /* Invalid input */
+  /* ── Shadow ── */
+  --shadow-card: 0 1px 4px rgba(26, 29, 35, 0.08);
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Rubik";
+  line-height: 100%;
+  color: var(--main-text-color);
+  background-color: var(--color-bg-primary);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  max-width: 1440px;
+  gap: 3rem;
+}
+
+.hero {
+  padding: 3rem 0 5rem;
+  color: var(--color-text-primary);
+}
+
+.claculator {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.card-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 4rem 6rem;
+  box-shadow: 0 1px 4px rgba(26, 29, 35, 0.08);
+  border-radius: 3rem;
+  background-color: var(--color-bg-secondary);
+}
+
+.date {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.date-label {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.date-input {
+  color: var(--color-text-muted);
+  border: 0.1rem solid var(--color-border-light);
+  width: 70%;
+  text-align: center;
+  padding: 1rem;
+  font-weight: 400;
+  border-radius: 3rem;
+}
+
+.vlaidation-message {
+  opacity: 0;
+}
+
+.refrance {
+  line-height: 2rem;
+  font-size: 1.5rem;
+  color: var(--color-text-muted);
+}
+
+.short-cuts {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3rem;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+}
+
+.short-cuts-checkbox {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 0.1rem solid var(--color-border-light);
+  border-radius: 5rem;
+  padding: 0.1rem 0.2rem;
+  transition: all 0.3s ease;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox-label {
+  cursor: pointer;
+}
+
+.checkmark {
+  width: 1rem;
+  height: 1rem;
+  border: 0.1rem solid #333;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.short-cuts-checkbox:has(.checkbox:checked) {
+  border: 0.1rem solid lightgreen;
+  border-radius: 5rem;
+}
+
+.checkbox:checked + .checkmark {
+  border: none;
+  background-color: lightgreen;
+}
+
+.button {
+  margin-left: auto;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-text-secondary);
+  border: 0.1rem solid var(--color-border-medium);
+  padding: 1rem 5rem;
+  border-radius: 3rem;
+  box-shadow: var(--shadow-card);
+  background-color: var(--color-bg-tertiary);
+}
+
+.result-primary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+.result-primary-title {
+  color: var(--color-text-primary);
+  font-size: 2.5rem;
+}
+.result-primary-container {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.result-title {
+  font-size: 2rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.result {
+  width: 100%;
+  padding: 1rem 3rem;
+  border: 0.1rem solid var(--color-border-light);
+  border-radius: 3rem;
+}
+
+/*# sourceMappingURL=main.css.map */
