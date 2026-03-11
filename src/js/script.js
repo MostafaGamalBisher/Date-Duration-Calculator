@@ -24,11 +24,19 @@ export const getInputValues = () => {
   const eMonth = +end.month.value;
   const eYear = +end.year.value;
 
-  const startDate = new Date(sYear, sMonth - 1, sDay).setHours(0, 0, 0, 0);
-  let endDate = new Date(eYear, eMonth - 1, eDay).setHours(0, 0, 0, 0);
+  const startDate = new Date(sYear, sMonth - 1, sDay);
+  startDate.setHours(0, 0, 0, 0);
+
+  let endDate = new Date(eYear, eMonth - 1, eDay);
+  endDate.setHours(0, 0, 0, 0);
 
   if (currentDate.checked) {
-    endDate = new Date().setHours(0, 0, 0, 0);
+    endDate = new Date();
+    endDate.setHours(0, 0, 0, 0);
+  }
+
+  if (workingDate.checked) {
+    startDate.setDate(startDate.getDate() - 1);
   }
 
   return { startDate, endDate };
@@ -36,33 +44,60 @@ export const getInputValues = () => {
 
 /* calculating the deffrance between the 2 dates in miliseconds */
 
-export const calculateDifference = ({ startDate, endDate }) => {
-  const diff = endDate - startDate;
+// export const calculateDifference = ({ startDate, endDate }) => {
+//   const diff = endDate - startDate;
 
-  return { diff };
-};
+//   return { diff };
+// };
 
 /* claculating total days  */
-export const calculateDates = ({ diff }) => {
-  let totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
+// export const calculateDates = ({ diff }) => {
+//   let totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
 
-  if (workingDate.checked) {
-    totalDays += 1;
-  }
+// if (workingDate.checked) {
+//   totalDays += 1;
+// }
 
-  return { totalDays };
-};
+//   return { totalDays };
+// };
 
 /* geting the end-results */
 
-export const result = ({ totalDays }) => {
-  const years = Math.floor(totalDays / 365);
-  const months = Math.floor((totalDays % 365) / 30);
-  const days = Math.floor((totalDays % 365) % 30);
+// export const result = ({ totalDays }) => {
+//   const years = Math.floor(totalDays / 365);
+//   const months = Math.floor((totalDays % 365) / 30);
+//   const days = Math.floor((totalDays % 365) % 30);
 
-  const inYears = (totalDays / 365).toFixed(2);
-  const inMonths = (totalDays / 30).toFixed(2);
-  const inDays = totalDays.toFixed(2);
+//   const inYears = (totalDays / 365).toFixed(2);
+//   const inMonths = (totalDays / 30).toFixed(2);
+//   const inDays = totalDays;
+
+//   return { years, months, days, inYears, inMonths, inDays };
+// };
+
+export const result = ({ startDate, endDate }) => {
+  const miliseconds = 1000 * 60 * 60 * 24;
+
+  let totalDays = Math.floor((endDate - startDate) / miliseconds);
+
+  let years = endDate.getFullYear() - startDate.getFullYear();
+  let months = endDate.getMonth() - startDate.getMonth();
+  let days = endDate.getDate() - startDate.getDate();
+
+  if (days < 0) {
+    months--; //borrow 1 month from your months can be (28,29,30,31)
+    const prevMonth = new Date(endDate.getFullYear(), endDate.getMonth(), 0);
+    days += prevMonth.getDate();
+  }
+
+  if (months < 0) {
+    years--; //borrow 1 year from your years (12 months)
+    months += 12;
+  }
+
+  const inYears = (totalDays / 365.25).toFixed(2);
+  const inMonths = (totalDays / 30.44).toFixed(2);
+  const inDays = totalDays;
 
   return { years, months, days, inYears, inMonths, inDays };
 };

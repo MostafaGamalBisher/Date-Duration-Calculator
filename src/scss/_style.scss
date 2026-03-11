@@ -68,8 +68,17 @@
   border: 0.1rem solid var(--color-error);
 }
 
+.warn {
+  border: 0.1rem solid var(--color-warning);
+}
+
 .vlaidation-message {
   opacity: 0;
+  transition: opacity 0.3s ease;
+
+  &.visible {
+    opacity: 1;
+  }
 }
 .refrance {
   line-height: 2rem;
