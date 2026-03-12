@@ -60,15 +60,10 @@ export const validateDay = (input) => {
 
   /* validating year inputs */
 
-  //years can be 0 or 1 or more only and can't be decimal or lower than 0
   if (!yearInput.value) {
     yearInput.classList.remove("valid", "invalid");
     yearMessage.classList.remove("visible");
-  } else if (yearValue === 0) {
-    yearInput.classList.remove("invalid", "valid");
-    yearInput.classList.add("warn");
-    yearMessage.classList.remove("visible");
-  } else if (yearValue < 0 || yearRaw.includes(".")) {
+  } else if (yearValue <= 0 || yearRaw.includes(".")) {
     yearInput.classList.remove("valid", "warn");
     yearInput.classList.add("invalid");
     yearMessage.classList.add("visible");
@@ -89,22 +84,28 @@ export const isFormValid = () => {
   const endDate = dateSections[1];
 
   //start date has invalid calss
-  const startDateInvalid = startDate.querySelector(".date-input.invalid");
+  const startDateInvalid = startDate.querySelector(
+    ".date-input.invalid, .date-input.warn",
+  );
   //start date has empty input
   const startDateEmpty =
     !startDate.querySelector("[name='day']").value ||
-    !startDate.querySelector("[name='month']").value;
+    !startDate.querySelector("[name='month']").value ||
+    !startDate.querySelector("[name='year']").value;
 
   if (startDateInvalid || startDateEmpty) return false;
 
   //validating the end date if only checkbox is not checked
 
   if (!currentDateCheckbox.checked) {
-    const endDateInvalid = endDate.querySelector(".date-input.invalid");
+    const endDateInvalid = endDate.querySelector(
+      ".date-input.invalid, .date-input.warn",
+    );
 
     const endDateEmpty =
-      endDate.querySelector("[name='day']").value ||
-      endDate.querySelector("[name='month']").value;
+      !endDate.querySelector("[name='day']").value ||
+      !endDate.querySelector("[name='month']").value ||
+      !endDate.querySelector("[name='year']").value;
 
     if (endDateInvalid || endDateEmpty) return false;
   }
