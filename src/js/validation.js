@@ -84,9 +84,7 @@ export const isFormValid = () => {
   const endDate = dateSections[1];
 
   //start date has invalid calss
-  const startDateInvalid = startDate.querySelector(
-    ".date-input.invalid, .date-input.warn",
-  );
+  const startDateInvalid = startDate.querySelector(".date-input.invalid");
   //start date has empty input
   const startDateEmpty =
     !startDate.querySelector("[name='day']").value ||
@@ -98,9 +96,7 @@ export const isFormValid = () => {
   //validating the end date if only checkbox is not checked
 
   if (!currentDateCheckbox.checked) {
-    const endDateInvalid = endDate.querySelector(
-      ".date-input.invalid, .date-input.warn",
-    );
+    const endDateInvalid = endDate.querySelector(".date-input.invalid");
 
     const endDateEmpty =
       !endDate.querySelector("[name='day']").value ||
