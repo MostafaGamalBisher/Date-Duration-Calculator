@@ -39,4 +39,4 @@ date-calculator/
 ├── package-lock.json # Auto-generated — do not edit
 ├── .gitignore # Exclude node_modules and dist
 └── README.md # Project documentation
-#first commit
+
