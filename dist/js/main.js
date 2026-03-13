@@ -36,7 +36,7 @@ currentDateCheckbox.addEventListener("change", () => {
   if (currentDateCheckbox.checked) {
     const today = new Date();
 
-    endDay.value = today.getDay();
+    endDay.value = today.getDate();
     endMonth.value = today.getMonth() + 1;
     endYear.value = today.getFullYear();
 
